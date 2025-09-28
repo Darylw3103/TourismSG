@@ -4,28 +4,16 @@ import changijewel from "./assets/changijewel.jpg"
 import gardensbythebay from "./assets/gardensbythebay.jpg"
 import verynicemerlion from "./assets/verynicemerlion.jpg"
 import MapView from "./map"
+import Header from "./header" // Import your Header component
 
 export default function LandingPage() {
   const navigate = useNavigate()
 
   return (
     <div className="min-h-screen flex flex-col bg-indigo-100 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-8 py-4 bg-blue-600 shadow-md fixed top-0 left-0 right-0 z-50">
-        <div className="text-3xl font-extrabold text-gray-200 cursor-pointer select-none">
-          SGTourism
-        </div>
-        <nav>
-          <button
-            onClick={() => navigate("/login")}
-            className="px-5 py-3 border-2 border-gray-300 text-gray-200 rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition"
-          >
-            Sign In
-          </button>
-        </nav>
-      </header>
-
-      {/* Spacer */}
+      <Header /> {/* Use Header component}
+      
+      {/* Spacer for fixed header */}
       <div className="h-20" />
 
       {/* Hero / Preview Section */}
