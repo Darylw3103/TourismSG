@@ -4,6 +4,11 @@ import changijewel from "./assets/changijewel.jpg"
 import gardensbythebay from "./assets/gardensbythebay.jpg"
 import verynicemerlion from "./assets/verynicemerlion.jpg"
 import MapView from "./map"
+<<<<<<< Updated upstream
+=======
+import ChatWidget from "./chatwidget"
+import Header from "./header" // Import your Header component
+>>>>>>> Stashed changes
 
 export default function LandingPage() {
   const navigate = useNavigate()
@@ -66,6 +71,7 @@ export default function LandingPage() {
       <div className="w-full bg-gray-200 py-8">
         <div className="max-w-7xl mx-auto px-4">
           <MapView />
+          <ChatWidget />
         </div>
       </div>
     </div>

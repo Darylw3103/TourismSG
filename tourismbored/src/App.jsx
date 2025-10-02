@@ -1,7 +1,19 @@
+<<<<<<< Updated upstream
 import { useState } from "react";
 
 export default function App() {
     const [activeTab, setActiveTab] = useState("users");
+=======
+import { useState, useEffect } from "react";
+import Attractions from "./attractions"; 
+import Hotels from "./hotels";
+import Concerts from "./concerts";
+import Foodplaces from "./foodplaces"; // ✅ uncommented
+
+export default function Dashboard() {
+  const [activeTab, setActiveTab] = useState("attractions");
+  const [data, setData] = useState([]);
+>>>>>>> Stashed changes
 
     const tabs = ["users", "hotels", "attractions", "concerts", "itineraries", "food"];
 
@@ -14,6 +26,7 @@ export default function App() {
         food: [{ food_id: 1, restaurant_name: "Lau Pa Sat", cuisine_type: "Hawker", rating: 4.5 }],
     };
 
+<<<<<<< Updated upstream
     return (
         <div
             style={{
@@ -100,4 +113,39 @@ export default function App() {
             </div>
         </div>
     );
+=======
+    setData(sampleData[activeTab]);
+  }, [activeTab]);
+
+  return (
+    <div className="min-h-screen bg-gray-100 p-8 font-sans">
+      <h1 className="text-3xl font-bold mb-6">SG Tourism Explorer</h1>
+
+      {/* Tabs */}
+      <div className="flex gap-4 mb-6">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-4 py-2 rounded-lg border text-sm font-medium transition ${
+              activeTab === tab
+                ? "bg-blue-600 text-white border-blue-600"
+                : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
+            }`}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Content */}
+      <div className="bg-white rounded-lg shadow-md p-6">
+        {activeTab === "attractions" && <Attractions data={data} />}
+        {activeTab === "hotels" && <Hotels data={data} />}
+        {activeTab === "concerts" && <Concerts data={data} />}
+        {activeTab === "foodplaces" && <Foodplaces data={data} />}
+      </div>
+    </div>
+  );
+>>>>>>> Stashed changes
 }

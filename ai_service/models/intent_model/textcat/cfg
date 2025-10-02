@@ -1,0 +1,9 @@
+{
+  "labels":[
+    "general_query",
+    "category_search",
+    "general_attractions"
+  ],
+  "threshold":0.0,
+  "positive_label":null
+}
